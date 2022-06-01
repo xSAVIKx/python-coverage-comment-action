@@ -83,6 +83,11 @@ def get_coverage_info(merge: bool) -> Coverage:
     return extract_info(json.loads(json_coverage))
 
 
+def load_coverage_info(coverage_info_file: pathlib.Path) -> Coverage:
+    json_coverage = coverage_info_file.read_text()
+    return extract_info(json.loads(json_coverage))
+
+
 def extract_info(data) -> Coverage:
     """
     {

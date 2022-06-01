@@ -32,6 +32,8 @@ class Config:
     )
     COMMENT_ARTIFACT_NAME: str = "python-coverage-comment-action"
     COMMENT_FILENAME: pathlib.Path = pathlib.Path("python-coverage-comment-action.txt")
+    COVERAGE_INFO_FILENAME: pathlib.Path = pathlib.Path("coverage.json")
+    """The name of the converted JSON coverage report."""
     MINIMUM_GREEN: float = 100.0
     MINIMUM_ORANGE: float = 70.0
     MERGE_COVERAGE_FILES: bool = False

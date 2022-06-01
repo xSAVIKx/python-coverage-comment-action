@@ -36,6 +36,17 @@ inputs:
       Name of the file in which the body of the comment to post on the PR is stored.
     default: python-coverage-comment-action.txt
     required: false
+  COVERAGE_INFO_FILENAME:
+    description: >
+      The name of the converted JSON coverage report.
+      
+      One may decide to use their "local" coverage tooling and only use the action 
+      to post a comment.
+      
+      This may be handy when a custom pre-process or merge logic is involved or some context
+      is required.
+    default: coverage.json
+    required: false
   MINIMUM_GREEN:
     description: >
       If the coverage percentage is above or equal to this value, the badge
@@ -71,6 +82,7 @@ runs:
     BADGE_FILENAME: ${{ inputs.BADGE_FILENAME }}
     COMMENT_ARTIFACT_NAME: ${{ inputs.COMMENT_ARTIFACT_NAME }}
     COMMENT_FILENAME: ${{ inputs.COMMENT_FILENAME }}
+    COVERAGE_INFO_FILENAME: ${{ inputs.COVERAGE_INFO_FILENAME }}
     MINIMUM_GREEN: ${{ inputs.MINIMUM_GREEN }}
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
     MERGE_COVERAGE_FILES: ${{ inputs.MERGE_COVERAGE_FILES }}
