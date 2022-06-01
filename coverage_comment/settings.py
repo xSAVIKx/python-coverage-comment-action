@@ -68,6 +68,10 @@ class Config:
     def clean_comment_filename(cls, value: str) -> pathlib.Path:
         return path_below(value)
 
+    @classmethod
+    def clean_coverage_info_filename(cls, value: str) -> pathlib.Path:
+        return path_below(value)
+
     @property
     def GITHUB_PR_NUMBER(self) -> int | None:
         # "refs/pull/2/merge"
