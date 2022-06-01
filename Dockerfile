@@ -10,6 +10,6 @@ WORKDIR /workdir
 COPY pyproject.toml ./
 COPY poetry.lock ./
 COPY coverage_comment ./coverage_comment
-RUN pip install .
+RUN pip install --no-cache-dir .
 
 CMD [ "coverage_comment" ]
